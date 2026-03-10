@@ -9,14 +9,16 @@ nav_order: 1
 profiles:
   # Professor
   - content: about_shin.md
+    image: prof_pic.jpg
     align: left
   # Undergraduate Researchers
   - content: about_kimcj.md
     image: kimcj_picture.jpg
-    align: left
+    align: right
   - content: about_leejh.md
+    image: prof_pic.jpg
     align: left
   - content: about_woosb.md
     image: woosb_picture.jpg
-    align: left
+    align: right
 ---
