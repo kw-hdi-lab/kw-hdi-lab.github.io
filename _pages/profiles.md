@@ -2,27 +2,35 @@
 layout: profiles
 permalink: /people/
 title: People
-description: members of the lab or group
+description: Members of HDI Lab
 nav: true
 nav_order: 1
 
 profiles:
-  # if you want to include more than one profile, just replicate the following block
-  # and create one content file for each profile inside _pages/
+  # Professor
   - align: right
-    image: prof_pic.jpg
-    content: about_einstein.md
-    image_circular: false # crops the image to make it circular
+    content: about_shin.md
+    image_circular: false
     more_info: >
-      <p>555 your office number</p>
-      <p>123 your address street</p>
-      <p>Your City, State 12345</p>
+      <p>광운대학교 새빛관 704호</p>
+      <p>010-6564-2663</p>
+
+  # Undergraduate Researchers
   - align: left
-    image: prof_pic.jpg
-    content: about_einstein.md
-    image_circular: false # crops the image to make it circular
+    content: about_kimcj.md
+    image_circular: false
     more_info: >
-      <p>555 your office number</p>
-      <p>123 your address street</p>
-      <p>Your City, State 12345</p>
+      <p>010-8596-2680</p>
+
+  - align: left
+    content: about_leejh.md
+    image_circular: false
+    more_info: >
+      <p>010-5830-2782</p>
+
+  - align: left
+    content: about_woosb.md
+    image_circular: false
+    more_info: >
+      <p>010-6693-2694</p>
 ---
