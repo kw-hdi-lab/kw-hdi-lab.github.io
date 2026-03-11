@@ -16,7 +16,7 @@ profiles:
     image: kimcj_picture.jpg
     align: right
   - content: about_leejh.md
-    image: prof_pic.jpg
+    image: leejh_picture.jpg
     align: left
   - content: about_woosb.md
     image: woosb_picture.jpg
