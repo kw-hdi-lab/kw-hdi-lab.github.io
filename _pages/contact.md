@@ -24,6 +24,12 @@ The lab is looking for excellent undergraduate and graduate students. If you wan
     outline: none !important;
     box-shadow: none !important;
   }
+  #contact-map *,
+  #contact-map *:before,
+  #contact-map *:after {
+    transition: none !important;
+    animation: none !important;
+  }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
 <script>
