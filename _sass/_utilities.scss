@@ -114,22 +114,14 @@ progress::-moz-progress-bar {
 
 // Themes transition
 
-html.transition,
-html.transition *,
-html.transition *:before,
-html.transition *:after {
-  transition: all 750ms !important;
-  transition-delay: 0 !important;
-}
+// html.transition,
+// html.transition *,
+// html.transition *:before,
+// html.transition *:after {
+//   transition: all 750ms !important;
+//   transition-delay: 0 !important;
+// }
 
-// Leaflet map: exclude from theme transition (prevents marker/attribution shrinking)
-#contact-map,
-#contact-map *,
-#contact-map *::before,
-#contact-map *::after {
-  transition: none !important;
-  animation: none !important;
-}
 
 // Copy button
 
