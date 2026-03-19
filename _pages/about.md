@@ -40,5 +40,5 @@ We aim to effectively analyze complex data generated across diverse domains and 
     In high-stakes domains such as healthcare, transportation, and security, we propose interactive analytical frameworks that allow experts to evaluate and improve not only model performance but also validity and explainability.
 
 ---
-
+**Research Summary**
 <img src="/assets/img/research_summary.jpg" alt="Research Summary" style="max-width: 100%; height: auto;">
