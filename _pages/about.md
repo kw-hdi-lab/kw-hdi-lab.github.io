@@ -41,4 +41,4 @@ We aim to effectively analyze complex data generated across diverse domains and 
 
 ---
 
-![Research Summary](/img/research_summary.jpg)
+![Research Summary](/assets/img/research_summary.jpg)
