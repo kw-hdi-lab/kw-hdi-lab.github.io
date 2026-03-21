@@ -9,12 +9,11 @@ nav_order: 5
 
 The lab is looking for excellent undergraduate and graduate students. If you want to do research in HDI Lab, please contact Donghwa Shin.
 
-- **Email:**
-  {::nomarkdown}
-  {% include obfuscated_email.liquid b64="ZGhzaGluQGt3LmFjLmty" plain_email="dhshin@kw.ac.kr" %}
-  {:/nomarkdown}
-- **Office:** Room 704, Saebit-gwan, 20 Gwangun-ro, Nowon-gu, Seoul 01897, Republic of Korea
-- **Number:** 82+ 2-940-8474
+<ul>
+  <li><strong>Email:</strong> {% include obfuscated_email.liquid b64="ZGhzaGluQGt3LmFjLmty" plain_email="dhshin@kw.ac.kr" %}</li>
+  <li><strong>Office:</strong> Room 704, Saebit-gwan, 20 Gwangun-ro, Nowon-gu, Seoul 01897, Republic of Korea</li>
+  <li><strong>Number:</strong> 82+ 2-940-8474</li>
+</ul>
 
 #### Location
 
