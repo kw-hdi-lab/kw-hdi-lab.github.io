@@ -9,6 +9,10 @@ related_publications: false
 scholar:
   bibliography: optimizing_drt.bib
 _styles: |
+  .post-title {
+    font-size: clamp(1.35rem, 2.8vw, 2rem);
+    line-height: 1.25;
+  }
   .post-description {
     font-size: 1.125rem;
     line-height: 1.5;
