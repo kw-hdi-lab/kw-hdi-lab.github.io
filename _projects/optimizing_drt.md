@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Optimizing (DRT) Scheduling
+title: Optimizing Demand Responsive Transport (DRT) Scheduling
 description: Chanjin Kim
 img: assets/img/sioux_falls_network.jpeg
 importance: 1
