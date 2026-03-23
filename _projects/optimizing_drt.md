@@ -61,17 +61,46 @@ $$
 
 To further improve training stability and exploration efficiency, the framework incorporates experience replay and an  ε-greedy strategy. This enables more stable and reliable policy learning for online decision-making problems such as real-time DRT scheduling.
 
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/drt_figure_3.png" title="DDQN-based learning process" alt="Diagram illustrating the DDQN-based learning process." class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+<div class="caption">
+    DDQN-based learning process
+</div>
+<div class="publications">
+
 #### Q-Value-Based Iterative Decision-Making Framework
 
 A Q-value-based iterative decision-making framework for multi-vehicle DRT scheduling. Rather than assigning all vehicle actions simultaneously, the framework selects the most promising vehicle–action pair step by step based on Q-values, updates the virtual system state after each assignment, and repeats the process until all vehicles are assigned. This iterative approach captures interdependencies among vehicles and enables more reliable and efficient system-level decisions in dynamic environments.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/drt_figure_1.png" title="Q-value-based iterative decision-making framework" alt="Diagram illustrating the Q-value-based iterative decision-making framework for multi-vehicle DRT scheduling." class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+<div class="caption">
+    Q-Value-Based Iterative Action Assignment in Centralized Framework
+</div>
+<div class="publications">
 
 #### Action Space Reduction Strategy
 
 Action space reduction strategy to improve the efficiency of centralized multi-vehicle DRT scheduling. A fixed action space is pre-defined to avoid costly dynamic action generation, while action masking is applied to remove infeasible actions at each decision step. This design reduces computational overhead, stabilizes learning, and supports fast and scalable real-time inference.
 
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/drt_figure_2.png" title="Action space reduction strategy" alt="Diagram illustrating the action space reduction strategy with a fixed action space and action masking for DRT scheduling." class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Action Space Reduction Process.
+</div>
 
 <div class="publications">
-
 <h2 class="pub-category references-heading">References</h2>
 
 {% bibliography --file optimizing_drt.bib --group_by none --query @* %}
