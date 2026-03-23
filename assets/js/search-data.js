@@ -434,7 +434,7 @@ ninja.data = [{
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
             },},{id: "projects-optimizing-demand-responsive-transport-drt-scheduling",
-          title: 'Optimizing Demand Responsive Transport (DRT) Scheduling',
+          title: 'Optimizing Demand-Responsive Transport (DRT) Scheduling',
           description: "Chanjin Kim",
           section: "Projects",handler: () => {
               window.location.href = "/projects/optimizing_drt/";
