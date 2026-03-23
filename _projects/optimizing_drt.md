@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Optimizing Demand Responsive Transport (DRT) Scheduling
+title: Optimizing Demand-Responsive Transport (DRT) Scheduling
 description: Chanjin Kim
 img: assets/img/sioux_falls_network.jpeg
 importance: 1
@@ -14,6 +14,50 @@ _styles: |
     line-height: 1.5;
   }
 ---
+
+### Abstract
+
+This project is reinforcement learning framework to optimize online scheduling in Demand-Responsive Transport using Double Deep Q-Network with a Q-value-based iterativeassignment mechanism. The scheduling problem is formulated as sequential decision-making where the agent observes fleet and request states and selects discrete vehicle–request actions under operational constraints. To support scalable learning and fast inference, we predefine a fixed action space covering all vehicle–request combinations and apply dynamic action masking to exclude infeasible actions (e.g., capacity violations, vehicles already engaged in service, and inconsistent drop-off assignments). Unlike standard DQN-based centralized approaches that determine all vehicle actions simultaneously from a single system state, our method assigns actions sequentially. At each iteration, the vehicle with the highest predicted Q-value is selected, its action is committed, and the system is virtually updated before re-evaluating the remaining vehicles. This greedy yet coordinated procedure captures interdependencies among vehicles and the cumulative impact of prior assignments. The reward design combines immediate decision feedback with event-based delayed rewards, penalizing rejections, cancellations, and lateness while incentivizing successful drop-offs and effective pooling.
+
+### Research Goal
+
+This research aims to develop an intelligent scheduling framework for Demand Responsive Transport (DRT) that can effectively respond to dynamically changing travel demand in real time. Unlike conventional fixed-route public transit or static optimization approaches, the proposed framework addresses the inherent complexity of online DRT operations, where requests arrive sequentially and operational constraints continuously evolve. To achieve this, we formulate online DRT scheduling as a Markov Decision Process (MDP) and design a Double Deep Q-Network (DDQN)-based policy that learns how to make adaptive scheduling decisions under uncertainty. The ultimate goal of this study is to improve both service quality and operational efficiency by reducing passenger waiting time and ride time, while increasing service rate and maintaining robust performance across varying demand and operational conditions.
+
+### Metodology
+
+
+
+#### Double Deep Q-Network (DDQN)
+
+In this study, we employ Double Deep Q-Network (DDQN) to learn decision-making policies in dynamic scheduling environments. DDQN mitigates the Q-value overestimation problem of conventional DQN by decoupling action selection from action evaluation. Specifically, the online network selects the optimal action in the next state:
+
+$$
+a^* = \arg\max_{a'} Q(s_{t+1}, a'; \theta)
+$$
+
+The target network then evaluates the selected action to construct the learning target:
+
+$$
+y_t = r_t + \gamma \, Q(s_{t+1}, a^*; \theta^-)
+$$
+
+The model is trained by minimizing the following loss function:
+
+$$
+\mathcal{L}(\theta) = \mathbb{E}\left[ \left( y_t - Q(s_t, a_t; \theta) \right)^2 \right]
+$$
+
+To further improve training stability and exploration efficiency, the framework incorporates experience replay and an  ε-greedy strategy. This enables more stable and reliable policy learning for online decision-making problems such as real-time DRT scheduling.
+
+
+#### Q-Value-Based Iterative Decision-Making Framework
+
+
+
+#### Action Space Reduction Strategy
+
+
+
 
 <div class="publications">
 
