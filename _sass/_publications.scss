@@ -72,8 +72,40 @@
       .title,
       .author,
       .periodical,
-      .links {
+      .links,
+      .pub-meta {
         text-align: left;
+      }
+
+      .pub-meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        column-gap: 0.75rem;
+        row-gap: 0.25rem;
+
+        .periodical {
+          flex: 1 1 auto;
+          min-width: 0;
+        }
+
+        .doi-link.btn {
+          color: var(--global-text-color);
+          border: 1px solid var(--global-text-color);
+          padding-left: 1rem;
+          padding-right: 1rem;
+          padding-top: 0.25rem;
+          padding-bottom: 0.25rem;
+          margin-left: 0;
+          flex: 0 0 auto;
+          align-self: center;
+
+          &:hover {
+            color: var(--global-theme-color);
+            border-color: var(--global-theme-color);
+          }
+        }
       }
 
       .preview {
