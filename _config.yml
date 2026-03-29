@@ -202,14 +202,14 @@ exclude:
   - package.json
   - package-lock.json
   - _pages/about_einstein.md
-  - _pages/about_shin.md
-  - _pages/about_kimcj.md
-  - _pages/about_leejh.md
-  - _pages/about_woosb.md
-  - _pages/about_alumni_demo1.md
-  - _pages/about_alumni_demo2.md
-  - _pages/about_alumni_demo3.md
-  - _pages/about_alumni_demo4.md
+  - _pages/about_dhshin.md
+  - _pages/about_cjkim.md
+  - _pages/about_jhlee.md
+  - _pages/about_sbwoo.md
+  - _pages/about_dkkim.md
+  - _pages/about_hjkwon.md
+  - _pages/about_jmrhee.md
+  - _pages/about_chlee.md
   - purgecss.config.js
   - README.md
   - readme_preview/
@@ -333,6 +333,7 @@ filtered_bibtex_keywords:
     altmetric,
     annotation,
     author_role,
+    people_authors,
     arxiv,
     award,
     award_name,

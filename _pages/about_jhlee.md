@@ -1,4 +1,4 @@
-**Lee Jeho**
+**Jeho Lee**
 
 **Positions:** Undergraduate Researcher
 

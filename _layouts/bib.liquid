@@ -105,16 +105,49 @@
       {% if site.max_author_limit and author_array_size > site.max_author_limit %}
         {% assign author_array_limit = site.max_author_limit %}
       {% endif %}
+      {% assign is_ipr_publication = false %}
+      {% assign pub_category_normalized = entry.pub_category | default: '' | strip | upcase %}
+      {% if pub_category_normalized == 'IPR' %}
+        {% assign is_ipr_publication = true %}
+      {% endif %}
 
       {%- for author in entry.author_array limit: author_array_limit -%}
         {% assign author_is_self = false %}
+        {% assign author_is_people = false %}
+        {% assign author_first_name = author.first | strip %}
         {%- assign author_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
         {%- assign author_last_html = author.last | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
+        {% capture author_full_name %}{{ author_first_name }} {{ author_last_name | strip }}{% endcapture %}
+        {% assign author_full_name = author_full_name | strip %}
+        {% capture author_last_first_name %}
+          {{ author_last_name | strip }}{% if author_first_name != '' %}, {{ author_first_name }}{% endif %}
+        {% endcapture %}
+        {% assign author_last_first_name = author_last_first_name | strip %}
         {% if site.scholar.last_name contains author_last_name %}
           {% if site.scholar.first_name contains author.first %}
             {% assign author_is_self = true %}
           {% endif %}
         {%- endif -%}
+        {% if entry.people_authors %}
+          {% assign people_author_keys = entry.people_authors | split: ';' %}
+          {% assign author_key_last_first = author_last_first_name | downcase | replace: ', ', ',' | replace: ' ,', ',' | replace: '  ', ' ' %}
+          {% assign author_key_first_last = author_full_name | downcase | replace: '  ', ' ' %}
+          {% assign author_key_compact = author_key_last_first | remove: ',' | remove: ' ' %}
+          {% assign author_key_last_only = author_last_name | strip | downcase | remove: ',' | remove: ' ' %}
+          {% for people_author in people_author_keys %}
+            {% assign people_author_key = people_author | strip | downcase | replace: '  ', ' ' %}
+            {% assign people_author_key_last_first = people_author_key | replace: ', ', ',' | replace: ' ,', ',' %}
+            {% assign people_author_key_compact = people_author_key_last_first | remove: ',' | remove: ' ' %}
+            {% if people_author_key_last_first == author_key_last_first
+              or people_author_key == author_key_first_last
+              or people_author_key_compact == author_key_compact
+              or people_author_key_compact == author_key_last_only
+            %}
+              {% assign author_is_people = true %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
         {% assign coauthor_url = null %}
         {%- assign clean_last_name = author_last_name | downcase | remove_accents -%}
         {% if site.data.coauthors[clean_last_name] %}
@@ -128,15 +161,19 @@
 
         {%- if forloop.length > 1 -%}
           {% if forloop.first == false -%}
-            {%- if forloop.length > 2 %}, {% elsif forloop.length == 2 %}  {% endif %}
+            {% if is_ipr_publication %}
+              ,
+            {%- else -%}
+              {%- if forloop.length > 2 %}, {% elsif forloop.length == 2 %}  {% endif %}
+            {%- endif %}
           {%- endif %}
-          {%- if forloop.last and author_array_limit == author_array_size %}and {% endif -%}
+          {%- if is_ipr_publication == false and forloop.last and author_array_limit == author_array_size %}and {% endif -%}
         {% endif %}
-        {%- if author_is_self -%}
-          <em>
+        {%- if author_is_self or author_is_people -%}
+          <span class="author-highlight">
             {{- author.first }}
             {{ author_last_html -}}
-          </em>
+          </span>
         {%- else -%}
           {%- if coauthor_url -%}
             <a href="{{ coauthor_url }}">
@@ -164,7 +201,11 @@
           {% endunless %}
         {%- endfor -%}
         {%- assign more_authors_show = more_authors_show | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
-        , and
+        {% if is_ipr_publication %}
+          ,
+        {% else %}
+          , and
+        {% endif %}
         <span
           class="more-authors"
           title="click to view {{ more_authors_hide }}"

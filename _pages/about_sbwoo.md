@@ -1,4 +1,4 @@
-**Woo Sungbeom**
+**Sungbeom Woo**
 
 **Positions:** Undergraduate Researcher
 

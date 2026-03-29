@@ -159,6 +159,9 @@
       }
 
       .author {
+        font-size: 0.94rem;
+        line-height: 1.35;
+
         a {
           border-bottom: 1px dashed var(--global-theme-color);
 
@@ -166,6 +169,13 @@
             border-bottom-style: solid;
             text-decoration: none;
           }
+        }
+
+        >span.author-highlight {
+          font-weight: 500;
+          color: var(--global-text-color);
+          // Slightly softer than body text, but darker than --global-text-color-light alone
+          color: color-mix(in srgb, var(--global-text-color) 82%, var(--global-text-color-light) 18%);
         }
 
         >em {
@@ -183,6 +193,11 @@
             border-bottom: 1px dashed var(--global-text-color);
           }
         }
+      }
+
+      .periodical {
+        font-size: 0.94rem;
+        line-height: 1.35;
       }
 
       .links {

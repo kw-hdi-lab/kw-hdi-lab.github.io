@@ -9,7 +9,7 @@ nav_order: 1
 profile_groups:
   - position: Professor
     profiles:
-      - content: about_shin.md
+      - content: about_dhshin.md
         image: shindh_picture.jpg
         align: left
   - position: Ph.D. Students
@@ -18,13 +18,13 @@ profile_groups:
     profiles: []
   - position: Undergraduate Researchers
     profiles:
-      - content: about_kimcj.md
+      - content: about_cjkim.md
         image: kimcj_picture.jpg
         align: left
-      - content: about_leejh.md
+      - content: about_jhlee.md
         image: leejh_picture.jpg
         align: left
-      - content: about_woosb.md
+      - content: about_sbwoo.md
         image: woosb_picture.jpg
         align: left
   - position: Alumni

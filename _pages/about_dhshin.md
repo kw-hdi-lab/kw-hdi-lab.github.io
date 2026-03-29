@@ -1,4 +1,4 @@
-**Shin DongHwa**
+**DongHwa Shin**
 
 **Positions:** Professor
 

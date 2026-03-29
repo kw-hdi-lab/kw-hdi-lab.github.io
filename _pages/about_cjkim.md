@@ -1,4 +1,4 @@
-**Kim Chanjin**
+**Chanjin Kim**
 
 **Positions:** Undergraduate Researcher
 
