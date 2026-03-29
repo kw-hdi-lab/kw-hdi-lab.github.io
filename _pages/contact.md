@@ -2,12 +2,12 @@
 layout: page
 title: Contact
 permalink: /contact/
-description: We always welcome new member.
+# description: We always welcome new member.
 nav: true
 nav_order: 5
 ---
 
-The lab is looking for excellent undergraduate and graduate students. If you want to do research in HDI Lab, please contact Donghwa Shin.
+<!-- The lab is looking for excellent undergraduate and graduate students. If you want to do research in HDI Lab, please contact DongHwa Shin. -->
 
 <ul>
   <li><strong>Email:</strong> {% include obfuscated_email.liquid b64="ZGhzaGluQGt3LmFjLmty" plain_email="dhshin@kw.ac.kr" %}</li>

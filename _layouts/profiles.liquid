@@ -3,12 +3,57 @@ layout: page
 ---
 <div class="post">
   <article>
-    {% if page.profiles %}
+    {% if page.profile_groups %}
+      {% for group in page.profile_groups %}
+        {% if group.profiles and group.profiles.size > 0 %}
+          <section class="people-position">
+            <h2 class="people-position-title">{{ group.position }}</h2>
+            <div class="people-position-body{% if group.layout == 'grid' %} people-position-body--grid{% endif %}">
+              {% for profile in group.profiles %}
+                {% if group.layout == 'grid' %}
+                  <div class="people-profile-cell">
+                {% endif %}
+                <div class="people-profile-row {% if profile.align == 'right' %}people-profile-row--reverse{% endif %}">
+                  {% if profile.image %}
+                    <div class="profile people-profile-image">
+                      {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
+                      {% if profile.image_circular %}
+                        {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+                      {% else %}
+                        {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+                      {% endif %}
+                      {% if group.layout == 'grid' %}
+                        {% capture sizes %}(min-width: {{ site.max_width }}) 120px, 25vw{% endcapture %}
+                      {% else %}
+                        {% capture sizes %}(min-width: {{ site.max_width }}) 200px, 30vw{% endcapture %}
+                      {% endif %}
+                      {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile.image %}
+                    </div>
+                  {% endif %}
+
+                  <div class="people-profile-body">
+                    {% if profile.content %}
+                      {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
+                      {{ profile_content | markdownify }}
+                    {% else %}
+                      {{ content }}
+                    {% endif %}
+                  </div>
+                </div>
+                {% if group.layout == 'grid' %}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </section>
+        {% endif %}
+      {% endfor %}
+    {% elsif page.profiles %}
       {% for profile in page.profiles %}
         <hr>
-        <div style="display: flex; align-items: center; gap: 2rem; flex-direction: {% if profile.align == 'right' %}row-reverse{% else %}row{% endif %};">
+        <div class="people-profile-row {% if profile.align == 'right' %}people-profile-row--reverse{% endif %}">
           {% if profile.image %}
-            <div class="profile" style="flex-shrink: 0; width: 200px;">
+            <div class="profile people-profile-image">
               {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
               {% if profile.image_circular %}
                 {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
@@ -20,7 +65,7 @@ layout: page
             </div>
           {% endif %}
 
-          <div style="flex: 1;">
+          <div class="people-profile-body">
             {% if profile.content %}
               {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
               {{ profile_content | markdownify }}
