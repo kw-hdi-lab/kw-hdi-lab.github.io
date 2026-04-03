@@ -5,7 +5,7 @@
   category: Education
   target: Students
   icon: fa-solid fa-drafting-compass
-  url: http://223.194.46.219:8123/
+  url: http://design.hdi-lab.com/
 
 - title: 객체지향프로그래밍설계/실습 Online Judge System
   description: 객체지향프로그래밍설계·실습 과목의 과제를 제출·채점하고 결과를 확인하는 온라인 저지 시스템입니다.
