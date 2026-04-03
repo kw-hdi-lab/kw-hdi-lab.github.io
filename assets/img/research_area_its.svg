@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" role="img" aria-label="Intelligent Transportation Systems placeholder">
+  <defs>
+    <linearGradient id="itsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a4d3a"/>
+      <stop offset="100%" stop-color="#2d6b52"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#itsBg)"/>
+  <path d="M80 220 L320 220" stroke="#ffffff" stroke-width="14" stroke-linecap="round" opacity="0.25"/>
+  <path d="M100 220 L300 220" stroke="#ffffff" stroke-width="4" opacity="0.45" stroke-dasharray="24 16"/>
+  <rect x="140" y="188" width="48" height="28" rx="6" fill="#ffffff" opacity="0.35"/>
+  <rect x="212" y="188" width="48" height="28" rx="6" fill="#ffffff" opacity="0.35"/>
+  <text x="200" y="330" text-anchor="middle" fill="#e8f2ed" font-family="system-ui, sans-serif" font-size="22" font-weight="600">ITS</text>
+  <text x="200" y="360" text-anchor="middle" fill="#a8d4c4" font-family="system-ui, sans-serif" font-size="14">placeholder</text>
+</svg>

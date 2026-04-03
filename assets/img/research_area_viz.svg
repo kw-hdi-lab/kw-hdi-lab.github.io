@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" role="img" aria-label="Data Analysis and Visualization placeholder">
+  <defs>
+    <linearGradient id="vizBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#2d5a87"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#vizBg)"/>
+  <g fill="none" stroke="#ffffff" stroke-width="3" opacity="0.35">
+    <path d="M60 280 L120 200 L180 240 L260 120 L340 180"/>
+    <circle cx="120" cy="200" r="8" fill="#ffffff" stroke="none" opacity="0.9"/>
+    <circle cx="180" cy="240" r="8" fill="#ffffff" stroke="none" opacity="0.9"/>
+    <circle cx="260" cy="120" r="8" fill="#ffffff" stroke="none" opacity="0.9"/>
+  </g>
+  <text x="200" y="330" text-anchor="middle" fill="#e8eef5" font-family="system-ui, sans-serif" font-size="22" font-weight="600">Visualization</text>
+  <text x="200" y="360" text-anchor="middle" fill="#a8bdd4" font-family="system-ui, sans-serif" font-size="14">placeholder</text>
+</svg>
